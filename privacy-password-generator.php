@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Privacy Password Generator Shortcode
  * Description: Adds a dark-mode password generator with shortcode support.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Requires at least: 5.8
  * Requires PHP: 7.4
  */
@@ -13,7 +13,7 @@ if (! defined('ABSPATH')) {
 
 final class Privacy_Password_Generator_Shortcode {
 	private const SHORTCODE = 'privacy_password_generator';
-	private const VERSION   = '1.0.0';
+	private const VERSION   = '1.0.1';
 
 	public function __construct() {
 		add_action('wp_enqueue_scripts', array($this, 'register_assets'));
@@ -89,6 +89,16 @@ final class Privacy_Password_Generator_Shortcode {
 
 			<div class="ppg-output" data-ppg-output aria-live="polite"></div>
 			<div class="ppg-message" data-ppg-message aria-live="polite"></div>
+
+			<div class="ppg-legend" aria-label="Password character color legend">
+				<div class="ppg-legend-title">Color guide</div>
+				<div class="ppg-legend-items">
+					<span class="ppg-legend-item"><span class="ppg-dot ppg-dot--upper"></span> Blue = Uppercase</span>
+					<span class="ppg-legend-item"><span class="ppg-dot ppg-dot--lower"></span> Green = Lowercase</span>
+					<span class="ppg-legend-item"><span class="ppg-dot ppg-dot--number"></span> Red = Numbers</span>
+					<span class="ppg-legend-item"><span class="ppg-dot ppg-dot--symbol"></span> Yellow = Symbols</span>
+				</div>
+			</div>
 		</div>
 		<?php
 		return (string) ob_get_clean();
