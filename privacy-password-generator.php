@@ -45,7 +45,7 @@ final class Privacy_Password_Generator_Shortcode {
 			array(
 				'min'    => 4,
 				'max'    => 128,
-				'length' => 16,
+				'length' => 12,
 			),
 			$atts,
 			self::SHORTCODE
